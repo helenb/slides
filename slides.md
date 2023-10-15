@@ -259,7 +259,7 @@ preload: false
   </div>
 
 <!--
-Before CSS3 and HTML5, much of the CSS and HTML we use today and take for granted wasn't available. I'm going to talk to you about some of the ways we used to build sites and lay out pages back in the olden days.
+Before CSS3 and HTML5, much of the code we use today - and take for granted - wasn't available. I'm going to talk to you about some of the ways we used to build sites and lay out pages back in the olden days.
 -->
 
 ---
@@ -281,7 +281,7 @@ I realised when writing this talk that I'd basically become Monty Python's 4 yor
 
 frames.html
 <div class="mb-6">
-```html {all|2|3|4|all}
+```html {all|2|3|all}
 <html>
   <frameset rows ="20%,80%">
     <frame src ="nav.html">
@@ -293,26 +293,28 @@ frames.html
 </div>
 
 nav.html
-```html {all|1|2|all}
+```html {all|1|2}
 <a href = "frame-1.html" target="showframe">frame 1</a><br>
 <a href = "frame-2.html" target="showframe">frame 2</a>
 ```
 
 <!--
-I wrote my first line of html when I was an english literature student who ought not to have been seen dead in the underground college computer room. I made a website on geocities about kids tv programmes - long since lost sadly - but I do remember using frames for my layout - it was a way of showing more than one html file per page, allowing a single file with navigation items without any serverside code.
+First of all let's have a chat about frames.
+
+I wrote my first line of html when I was an english literature student who ought not to have been seen dead in the underground college computer room. I made a website on geocities about kids tv programmes - long since lost sadly - but I do remember using frames for my layout. 
+
+it was a way of using just one file for navigation items but without any serverside code.
 
 So we had the frameset element which declared a layout with rows or cols, a bit like the textarea element.
 
-Then inside we could create a frame element which had a src pointing to a different file.
+Then inside we could create frame elements which had a src pointing to a different file.
 
 In the navigation file we create links to the other frame files using href and target.
-
-As each frame was effectively a different html file, you needed to create a new css link or redeclare your styles in each one.
 -->
 
 ---
 
-<video controls class="h-[90vh]">
+<video controls class="w-[700px]">
   <source src="/frames.mp4" type="video/mp4">
 </video>
 
@@ -330,12 +332,15 @@ Here's a quick screencast of what that code looks like in chrome - you can see t
 
 # Table layout
 
-<video controls class="h-[60vh]">
+<video controls class="w-[700px]">
   <source src="/lhi-tables.mp4" type="video/mp4">
 </video>
 
 <!--
-Long before flexbox, and before float began to be widely available developers often used tables for layout. When I first started at Torchbox in 2004 we were moving to always using CSS (i.e. floats) for layout, but we still had sites that had been built with tables. An example was the local heritage initiative site, which you can see here in the internet archive.
+Long before flexbox, and even before float began to be widely available, developers often used tables for layout.
+When I first started at Torchbox in 2004 we were moving towards always using CSS (i.e. floats) for layout, but we still had sites that had been built with tables. An example was the local heritage initiative site, which you can see here in the internet archive.
+
+Obviously not at all semantic and terrible for screen readers.
 -->
 
 ---
@@ -355,14 +360,14 @@ These days there is a whole world of options for animating on the web - simple C
 
 When I had my first job in web development, if you wanted any animated elements on your website you used flash, which was also often used for very rich interactive content like online games. You created your files in Macromedia Flash and then published them as .swf files which the browser would display.
 
-Above is some code from an old portfolio site which I had built using flash - unedited. I can't remember why the markup is all capitalised.
+Above is some code from an old portfolio site where I had a splash page that used flash - unedited. I can't remember why the markup is all capitalised.
 -->
 
 ---
 
 # Flash demo
 
-<video controls class="h-[60vh]">
+<video controls class="w-[500px]">
   <source src="/flash.mp4" type="video/mp4">
 </video>
 
@@ -372,24 +377,14 @@ HTML5 was designed to do away with the need for third pary plugins like flash, a
 
 ---
 
-# JavaScript image swaps
-
-test
-
-<!--
-test
--->
-
----
-
 # Before border-radius
 
-<video controls class="h-[60vh]">
+<video controls class="w-[700px]">
   <source src="/asthma.mp4" type="video/mp4">
 </video>
 
 <!--
-The border-radius property was part of the CSS3 spec which was released in 2005 - but as with all CSS there was a significant lag between the time it was released, and when it was widely supported enough to use. As an aside, cross browser support was generally a much harder job in the early 2000s, as the difference betwen Internet Explorer code and Netscape and then Mozilla were much more significant. Here's another old Torchbox RationalMedia webiste - Asthma UK, in 2006.
+The border-radius property was part of the CSS3 spec which was released in 2005 - but as with all CSS there was a significant lag between the time it was released, and when it was widely supported enough to use. As an aside, cross browser support was generally a much harder job in the early 2000s, as the differences betwen Internet Explorer and Netscape, and later Mozilla, were much more significant. Here's another old Torchbox webiste - Asthma UK, from 2006.
 
 You can see from this screencast that they love their elements with rounded corners, but without border-radius we had to use background images to create each and every single one.
 -->
@@ -398,7 +393,7 @@ You can see from this screencast that they love their elements with rounded corn
 
 # Sass and BEM
 
-```css {all|3|38|all} {maxHeight:'300px'}
+```css {all|3|38|26|all} {maxHeight:'300px'}
 /* 
 page layout
 Nick Lee
@@ -600,9 +595,9 @@ Nick Lee
 ```
 
 <!--
-We started using Sass widely at Torchbox in about 2011 - I remember because I had to learn it on returning from maternity leave after my second son was born. Before Sass allowed us a more componentised approach with imports we tended to have separate CSS files for generic html definitions, the site structure, navigation, and for pages.
+We started using Sass widely at Torchbox in about 2011 - I remember because I had to learn it on returning from maternity leave after my second son was born. Sass gave us a componentised approach to our CSS files, using imports. But before Sass, we tended to have separate CSS files for just a few key areas of the site: generic html definitions, the site structure, the navigation, and one for each page.
 
-Here you can see some structural code for asthma uk. (look who wrote it!). You can see id selectors and nested code which we'd never use these days, but overall it's actually not horrible at all to read.
+Here you can see some structural code from asthma uk. (look who wrote it!). You can it has id selectors and nested code which we'd never use these days, but overall it's actually not horrible at all to read.
 
 You can see that our layout is done using 'floats'.
 -->
@@ -695,7 +690,7 @@ header[role="banner"] {
 
 <!--
 
-Here's a sample of some CSS from Upshot in 2014. Notice that we are now using media queries to support different screen sizes. At this point we may have started using Sass. But it's a complex app and lots of nested CSS rules the code quickly became much harder to edit without overriding lots of other rules and using the !important modifier. Notice how we used the convention of indenting code to show how rules became more specific.
+Here's a sample of some CSS from Upshot in 2014. We are now using media queries to support different screen sizes. But it's a complex app and there are lots of nested CSS rules. The code quickly becomes much harder to edit without overriding lots of other rules and using the !important modifier. Notice how we used the convention of indenting code to show how rules become more specific.
 
 -->
 
@@ -741,7 +736,7 @@ Here's a sample of some CSS from Upshot in 2014. Notice that we are now using me
 ```
 
 <!--
-It certainly makes you realise just how much BEM (and other css methodologies) have revolutionised our work. I can't tell you how many times easier it is to edit someone else's BEM code than it was to go and figure out what was going on in code like that Upshot example.
+It certainly makes you realise just how much BEM (and other css methodologies) have revolutionised our work. I can't tell you how many times easier it is to edit someone else's BEM code, than it was to figure out what was going on in code like that Upshot example.
 -->
 
 ---
@@ -808,7 +803,7 @@ html, body {
 ```
 
 <!--
-We often use calc() in css to figure out sizes that combine percentate widths with fixed pixel sizes. For example, for a site that has a fluid width, how would you have a fixed width sidebar, and a main page area that fills the rest of the page (using float layouts)?
+We often use calc() in css to figure out sizes that combine percentate widths with pixel sizes. For example, for a fluid-width site, how would you have a fixed width sidebar, and a main page area that fills the rest of the space? This is also assuming a float-based layout.
 
 With calc() it is easy
 
@@ -859,11 +854,9 @@ Harvey.attach(breakpoints.desktopSmall, {
 ```
 
 <!--
-The order property in CSS allows us to change the order that flex elements appear on the screen - this can be really handy if we want a display at mobile that has a different ordering of elements to desktop.
+The order property in CSS allows us to change the order that flex or grid elements appear on the screen - this can be really handy if we want a display at mobile that has a different ordering of elements to desktop.
 
-Before that we had to use JavaScript to rearrange elements at mobile and deskop - we sometimes used a tool called Harvey that allowed us to run code at different media queries. Here's a little extract of it in use on an early iteration of RCA.
-
-This isn't specifically rearranging elements but we could use Harvey to do things like remove an element at one location, and insert it at another.
+Before that we had to use JavaScript to rearrange elements at mobile and deskop - we sometimes used a tool called Harvey that allowed us to run JS code at different media queries. I wasn't able to find an example that was specifically rearranging elements, but here's a little extract of the navigation code in an early iteration of the RCA site. You can see how you might use Harvey to remove an element from one part of the DOM and add it to another.
 
 -->
 
@@ -876,8 +869,8 @@ background: https://source.unsplash.com/NzERTNpnaDw/1920x1080/
 
 <div class="text-2xl font-semibold">
 <ul>
-<li>In many ways front-end development is so much easier than it used to be.</li>
-<li>And in others... not so much</li>
+<li v-click>In many ways front-end development is so much easier than it used to be.</li>
+<li v-click>And in others... not so much</li>
 </ul>
 </div>
 
@@ -893,7 +886,7 @@ align: center
 <img src="https://memecreator.org/static/images/memes/5017193.jpg" width="500" height="auto">
 
 <!--
-I hope you've enjoyed a little foray into my history of front-end
+I hope you've enjoyed a little foray into front-end history.
 Thanks for listening!
 -->
 
