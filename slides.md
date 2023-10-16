@@ -247,16 +247,17 @@ preload: false
   </div>
 </div>
 <div
-    v-motion
-    :initial="{ opacity:0 }"
-    :enter="{
-      opacity:1,
-      transition: {
-        delay: 3000,
-      },
-    }" class="mt-6 text-red-800 font-bold">
-    And a lot more...
-  </div>
+  v-motion
+  :initial="{ opacity:0 }"
+  :enter="{
+    opacity:1,
+    transition: {
+      delay: 3000,
+    },
+  }" class="mt-6 text-red-800 font-bold">
+  And a lot more...
+</div>
+
 
 <!--
 Before CSS3 and HTML5, much of the code we use today - and take for granted - wasn't available. I'm going to talk to you about some of the ways we used to build sites and lay out pages back in the olden days.
@@ -743,19 +744,19 @@ It certainly makes you realise just how much BEM (and other css methodologies) h
 
 ---
 
-# calc()
+# Before calc()
 
 <div class="mb-4">
 ```css
 
-.sidebar {
-  float: left;
-  width: 300px;
-}
-
 .main {
   float: left;
   width: calc(100% - 300px);
+}
+
+.sidebar {
+  float: left;
+  width: 300px;
 }
 
 ```
@@ -763,61 +764,33 @@ It certainly makes you realise just how much BEM (and other css methodologies) h
 
 ```css {all} {maxHeight:'200px'}
 
-/* CSS for fixed-fluid layout */
-
-.fixed {
-    width: 150px;  /* the fixed width required */
-    float: left;
+.sidebar {
+  width: 300px;
+  float: left;
 }
 
-.fixed + div {
-     margin-left: 150px;  /* must match the fixed width in the .fixed class */
-     overflow: hidden;
-}
-
-
-/* CSS to ensure sidebar and content are same height (optional) */
-
-html, body {
-    height: 100%;
-}
-
-.fill { 
-    min-height: 100%;
-    position: relative;
-}
-
-.filler:after{
-    background-color:inherit;
-    bottom: 0;
-    content: "";
-    height: auto;
-    min-height: 100%;
-    left: 0;
-    margin:inherit;
-    right: 0;
-    position: absolute;
-    top: 0;
-    width: inherit;
-    z-index: -1;  
+.main {
+  width: 100%;
+  float: left;
+  margin-right: -300px;
 }
 
 ```
 
 <!--
-We often use calc() in css to figure out sizes that combine percentate widths with pixel sizes. For example, for a fluid-width site, how would you have a fixed width sidebar, and a main page area that fills the rest of the space? This is also assuming a float-based layout.
+We often use calc() in css to figure out sizes that combine percentate widths with pixel sizes. For example, for a fluid-width site, how would you have a fixed width sidebar on the right, and a main page area that fills the rest of the space? This is also assuming a float-based layout.
 
 With calc() it is easy
 
-Here's the solution suggested in a stack-overflow post in 2012, using margin-left and overflow.
+Before that we had to use a negative margin on the main element that matched the size of the sidebar
 
-Calc was also brilliant for creating a card layout where your cards needed to be a flexible width but have a fixed gap between - before we had the gap property. We could calculate the width of the card as calc(33% - 15px).
+There were also some hacks needed with flaots to ensure the columns filled the full height of the page.
 
 -->
 
 ---
 
-# order
+# Before order
 
 ```ts {all} {maxHeight:'300px'}
 Harvey.attach(breakpoints.mobile, {
@@ -867,10 +840,11 @@ layout: cover
 background: https://source.unsplash.com/NzERTNpnaDw/1920x1080/
 ---
 
-# Conclusion
+# To finish up
 
 <div class="text-2xl font-semibold">
 <ul>
+<li v-click>That was just a small taster of how things have changed</li>
 <li v-click>In many ways front-end development is so much easier than it used to be.</li>
 <li v-click>And in others... not so much</li>
 </ul>
