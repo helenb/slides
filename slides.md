@@ -885,7 +885,7 @@ But on the other hand, we've created complicated toolchains, single page apps, w
 align: center
 ---
 
-<img src="https://memecreator.org/static/images/memes/5017193.jpg" width="500" height="auto">
+![Local Image](/youth-of-today.gif)
 
 <!--
 I hope you've enjoyed a little foray into front-end history.
