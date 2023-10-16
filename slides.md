@@ -384,14 +384,14 @@ HTML5 was designed to do away with the need for third pary plugins like flash, a
 </video>
 
 <!--
-The border-radius property was part of the CSS3 spec which was released in 2005 - but as with all CSS there was a significant lag between the time it was released, and when it was widely supported enough to use. As an aside, cross browser support was generally a much harder job in the early 2000s, as the differences betwen Internet Explorer and Netscape, and later Mozilla, were much more significant. Here's another old Torchbox webiste - Asthma UK, from 2006.
+The border-radius property was part of the CSS3 spec which was released in 2005 - but as with all CSS there was a significant lag between the time it was released, and when it was widely supported enough to use. As an aside, cross browser support was generally a much harder job in the early 2000s, as the differences between Internet Explorer and Netscape, and later Mozilla, were much more significant. Here's another old Torchbox website - Asthma UK, from 2006.
 
 You can see from this screencast that they love their elements with rounded corners, but without border-radius we had to use background images to create each and every single one.
 -->
 
 ---
 
-# Sass and BEM
+# Before Sass and BEM
 
 ```css {all|3|38|26|all} {maxHeight:'300px'}
 /* 
@@ -604,7 +604,9 @@ You can see that our layout is done using 'floats'.
 
 ---
 
-# But before BEM our code could quickly get quite complex
+# A tangled web
+
+But before BEM our code could quickly get quite complex
 
 ```css {all} {maxHeight:'300px'}
 header[role="banner"] {
