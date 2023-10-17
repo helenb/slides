@@ -260,7 +260,7 @@ preload: false
 
 
 <!--
-Before CSS3 and HTML5, much of the code we use today - and take for granted - wasn't available. I'm going to talk to you about some of the ways we used to build sites and lay out pages back in the olden days.
+Before CSS3 and HTML5, much of the code we use today wasn't available. I'm going to talk to you about some of the ways we used to build sites and lay out pages back in the olden days.
 -->
 
 ---
@@ -302,9 +302,9 @@ nav.html
 <!--
 First of all let's have a chat about frames.
 
-I wrote my first line of html when I was an english literature student who ought not to have been seen dead in the underground college computer room. I made a website on geocities about kids tv programmes - long since lost sadly - but I do remember using frames for my layout. 
+I wrote my first line of html when I was an english literature student who ought not to have been seen dead in the underground college computer room. I made a website on geocities about kids tv programmes - long since lost sadly - but I do remember using frames for my layout.
 
-it was a way of using just one file for navigation items but without any serverside code.
+One of the reasons I did that, was that it allowed me to use just one file for my navigation items but without any serverside code.
 
 So we had the frameset element which declared a layout with rows or cols, a bit like the textarea element.
 
@@ -339,9 +339,12 @@ Here's a quick screencast of what that code looks like in chrome - you can see t
 
 <!--
 Long before flexbox, and even before float began to be widely available, developers often used tables for layout.
-When I first started at Torchbox in 2004 we were moving towards always using CSS (i.e. floats) for layout, but we still had sites that had been built with tables. An example was the local heritage initiative site, which you can see here in the internet archive.
 
-Obviously not at all semantic and terrible for screen readers.
+When I first started at Torchbox in 2004 we were moving towards always using CSS for layout, but we still had sites that had been built with tables.
+
+An example was the local heritage initiative site, which you can see here in the internet archive.
+
+Obviously this is not at all semantic and terrible for screen readers.
 -->
 
 ---
@@ -357,11 +360,15 @@ WIDTH=550 HEIGHT=400>
 ```
 
 <!--
-These days there is a whole world of options for animating on the web - simple CSS transitions, keyframes, and more complex JavaScript animations using libraries like Greensock.
+These days there is a whole world of options for animating on the web - CSS transitions, keyframes, and JavaScript animations.
 
-When I had my first job in web development, if you wanted any animated elements on your website you used flash, which was also often used for very rich interactive content like online games. You created your files in Macromedia Flash and then published them as .swf files which the browser would display.
+When I had my first job in web development, if you wanted any animated elements on your website you used flash.
 
-Above is some code from an old portfolio site where I had a splash page that used flash - unedited. I can't remember why the markup is all capitalised.
+Did you know that the badger badger mushroom meme was built in flash, and is 20 years old this year? I was in my first web dev job when that meme came out.
+
+To work with flash you created your files in Macromedia Flash and then published them as .swf files which the browser would display.
+
+Above is some code from an old portfolio site where I had a splash page that used flash.
 -->
 
 ---
@@ -373,7 +380,7 @@ Above is some code from an old portfolio site where I had a splash page that use
 </video>
 
 <!--
-HTML5 was designed to do away with the need for third pary plugins like flash, and now all browsers will block flash content by default as it is insecure. However, there are browser extensions you can still find to play old flash files, so you can have the treat of seeing the intro to my portfolio website from 2000.
+These days all browsers will block flash content by default as it is insecure. However, there are browser extensions you can still find to play old flash files, so you can have the treat of seeing the intro to my portfolio website from 2000.
 -->
 
 ---
@@ -385,9 +392,13 @@ HTML5 was designed to do away with the need for third pary plugins like flash, a
 </video>
 
 <!--
-The border-radius property was part of the CSS3 spec which was released in 2005 - but as with all CSS there was a significant lag between the time it was released, and when it was widely supported enough to use. As an aside, cross browser support was generally a much harder job in the early 2000s, as the differences between Internet Explorer and Netscape, and later Mozilla, were much more significant. Here's another old Torchbox website - Asthma UK, from 2006.
+The border-radius property was part of the CSS3 spec which was released in 2005 - but as with all CSS there was a significant lag between the time it was released, and when it was widely supported enough to use.
 
-You can see from this screencast that they love their elements with rounded corners, but without border-radius we had to use background images to create each and every single one.
+As an aside, cross browser support was generally a much harder job in the early 2000s, as the differences between Internet Explorer and Netscape, and later Mozilla, were much more significant.
+
+Here's another old Torchbox website - Asthma UK, from 2006.
+
+You can see from this screencast that they have these teardrop style elements with 3 rounded corners, but without border-radius we had to use background images to create each and every single one.
 -->
 
 ---
@@ -596,11 +607,17 @@ Nick Lee
 ```
 
 <!--
-We started using Sass widely at Torchbox in about 2011 - I remember because I had to learn it on returning from maternity leave after my second son was born. Sass gave us a componentised approach to our CSS files, using imports. But before Sass, we tended to have separate CSS files for just a few key areas of the site: generic html definitions, the site structure, the navigation, and one for each page.
+We started using Sass widely at Torchbox in about 2011 - I remember because I had to learn it on returning from maternity leave after my second son was born.
 
-Here you can see some structural code from asthma uk. (look who wrote it!). You can it has id selectors and nested code which we'd never use these days, but overall it's actually not horrible at all to read.
+Sass gave us a componentised approach to our CSS files, using imports. 
+
+But before Sass, we tended to have separate CSS files for just a few key areas of the site: generic html definitions, the site structure, the navigation, and one for each page.
+
+Here you can see some structural code from asthma uk. (look who wrote it!). You can see it has id selectors and nested code which we'd never use these days.
 
 You can see that our layout is done using 'floats'.
+
+Overall it's not too bad to read.
 -->
 
 ---
@@ -693,7 +710,11 @@ header[role="banner"] {
 
 <!--
 
-Here's a sample of some CSS from Upshot in 2014. We are now using media queries to support different screen sizes. But it's a complex app and there are lots of nested CSS rules. The code quickly becomes much harder to edit without overriding lots of other rules and using the !important modifier. Notice how we used the convention of indenting code to show how rules become more specific.
+Here's a sample of some CSS from Upshot in 2014. We are now using media queries to support different screen sizes. But it's a complex app and there are lots of nested CSS rules. The code quickly becomes much harder to edit without overriding lots of other rules and using the !important modifier.
+
+Bear in mind that the same elements might end up being redefined in different CSS files, just to add to the complexity.
+
+Notice how we used the convention of indenting code to show how rules become more specific.
 
 -->
 
@@ -778,14 +799,13 @@ It certainly makes you realise just how much BEM (and other css methodologies) h
 ```
 
 <!--
-We often use calc() in css to figure out sizes that combine percentate widths with pixel sizes. For example, for a fluid-width site, how would you have a fixed width sidebar on the right, and a main page area that fills the rest of the space? This is also assuming a float-based layout.
+We often use calc() in css to figure out sizes that combine percentages with pixel sizes. For example, for a fluid-width site, how would you have a fixed width sidebar, and a main page area that fills the rest of the space? This is also assuming a float-based layout.
 
 With calc() it is easy
 
 Before that we had to use a negative margin on the main element that matched the size of the sidebar
 
 There were also some hacks needed with flaots to ensure the columns filled the full height of the page.
-
 -->
 
 ---
@@ -831,8 +851,7 @@ Harvey.attach(breakpoints.desktopSmall, {
 <!--
 The order property in CSS allows us to change the order that flex or grid elements appear on the screen - this can be really handy if we want a display at mobile that has a different ordering of elements to desktop.
 
-Before that we had to use JavaScript to rearrange elements at mobile and deskop - we sometimes used a tool called Harvey that allowed us to run JS code at different media queries. I wasn't able to find an example that was specifically rearranging elements, but here's a little extract of the navigation code in an early iteration of the RCA site. You can see how you might use Harvey to remove an element from one part of the DOM and add it to another.
-
+Before that we had to use JavaScript to rearrange elements at mobile and desktop - we sometimes used a tool called Harvey that allowed us to run JS code at different media queries. I wasn't able to find an example that was specifically rearranging elements, but here's a little extract of the navigation code in an early iteration of the RCA site. You can see how you might use Harvey to remove an element from one part of the DOM and add it to another.
 -->
 
 ---
@@ -847,13 +866,24 @@ background: https://source.unsplash.com/NzERTNpnaDw/1920x1080/
 <li v-click>That was just a small taster of how things have changed</li>
 <li v-click>In many ways front-end development is so much easier than it used to be.</li>
 <li v-click>And in others... not so much</li>
+<li v-click>We're learning all the time</li>
 </ul>
 </div>
 
 <!--
-Things that are simple to do now, like a complex layout, or re-ordering items at different screen sizes, that would have entailed lots of head scratching, are just so much easier now. I still pinch myself sometimes at how easy things are compared to when I started out.
+
+So, that was just a small taster of how we had to do things differently.
+
+In many ways front-end development is so much easier than it used to be
+
+Things that are simple to do now, like a complex layout, or re-ordering items at different screen sizes, that would have entailed lots of head scratching, are just so much easier now. Not to mention the fact that cross-browser support is so much better. I still pinch myself sometimes at how easy things are compared to when I started out.
+
+And in others... not so much
 
 But on the other hand, we've created complicated toolchains, single page apps, whole libraries for rending sites with JavaScript alone, which can take several years to master. From that point of view - life used to me so much simpler.
+
+It just goes to show how fast everything changes, and how we never stop learning in this career.
+
 -->
 ---
 align: center
